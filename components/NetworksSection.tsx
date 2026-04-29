@@ -11,7 +11,8 @@ const networkIcons = [
   Circle,   // Canton
   Diamond,  // XRP EVM
   Hexagon,  // Walrus
-  Circle    // Paxinet
+  Circle,   // Paxinet
+  Hexagon   // Pactus
 ]
 
 const networks = [
@@ -42,8 +43,18 @@ const networks = [
     bgColor: 'bg-orange-500',
     transactions: 'CC Scan',
     url: 'https://ccscan.winsnip.xyz/',
-    logo: '/canton-logo.png',
-    hasLogo: false
+    logo: '/canton1.png',
+    hasLogo: true
+  },
+  { 
+    name: 'Pactus', 
+    status: 'Partner', 
+    color: 'from-indigo-500 to-violet-600',
+    bgColor: 'bg-indigo-500',
+    transactions: 'Network',
+    url: 'https://pactus.org/',
+    logo: '/pactus-logo-circle.svg',
+    hasLogo: true
   },
   { 
     name: 'XRP EVM', 
@@ -186,7 +197,7 @@ export default function NetworksSection() {
         </motion.div>
 
         {/* Networks Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {networks.map((network, index) => {
             const IconComponent = networkIcons[index]
             return (

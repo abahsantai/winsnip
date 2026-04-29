@@ -38,10 +38,21 @@ const projects = [
     docsUrl: '/docs/cc-scan/getting-started/introduction',
     gradient: 'from-orange-500 via-red-500 to-orange-600',
     color: 'bg-orange-500',
-    logo: null,
-    icon: Shield,
+    logo: '/canton1.png',
     stats: { security: 'A+', network: 'CC' },
     features: ['Enterprise Security', 'Canton Network', 'Compliance Tools']
+  },
+  {
+    title: 'Wintip',
+    description: 'Advanced blockchain analytics and insights platform with real-time data visualization.',
+    category: 'Analytics Platform',
+    liveUrl: 'https://wintip.winsnip.xyz/',
+    docsUrl: '/docs/wintip/getting-started/introduction',
+    gradient: 'from-emerald-500 via-teal-500 to-emerald-600',
+    color: 'bg-emerald-500',
+    logo: '/Wintip.png',
+    stats: { insights: 'Real-time', data: 'Live' },
+    features: ['Data Analytics', 'Real-time Insights', 'Visualization Tools']
   }
 ]
 
@@ -170,9 +181,8 @@ export default function ProjectsGrid() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {projects.map((project, index) => {
-            const Icon = project.icon
             return (
               <motion.div
                 key={project.title}
@@ -215,8 +225,6 @@ export default function ProjectsGrid() {
                               height={56}
                               className="object-contain"
                             />
-                          ) : Icon ? (
-                            <Icon size={32} className="text-white" />
                           ) : null}
                         </motion.div>
                         
